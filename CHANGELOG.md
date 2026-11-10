@@ -2,6 +2,11 @@
 
 All notable changes to Retro Hacker Terminal. Versions are incremental per delivered revision.
 
+## 1.9.1 - 2026-11-11
+- Readability fix: headings and post titles no longer have a heavy 3-layer glow (5/10/20px) that blurred the text. They now use a subtle glow at rest.
+- Hover now gives a clearly visible brighter glow (white text with a green halo) on post titles and links.
+- Blur on in-post headings (h2-h4) reduced.
+
 ## 1.9.0 - 2026-11-10
 - New custom 404 page: a terminal window plays a fake "intrusion" (port scan, path bruteforce, payload injection) that ends in `ACCESS_DENIED :: 404`, with a glitching 404 title, replay button and search form.
 - The simulation is vanilla JavaScript (`assets/js/404.js`, loaded only on 404 pages), prints fake text only, makes no network requests, escapes the requested path, and respects `prefers-reduced-motion`.

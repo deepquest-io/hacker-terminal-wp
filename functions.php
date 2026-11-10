@@ -30,14 +30,14 @@ function deepquest_scripts() {
         'deepquest-style',
         get_stylesheet_uri(),
         [],
-        '1.9.0'
+        '1.9.1'
     );
 
     wp_enqueue_script(
         'deepquest-main',
         get_template_directory_uri() . '/assets/js/main.js',
         [],        // no jQuery dependency — vanilla JS
-        '1.9.0',
+        '1.9.1',
         true       // load in footer
     );
 
@@ -46,7 +46,7 @@ function deepquest_scripts() {
             'deepquest-404',
             get_template_directory_uri() . '/assets/js/404.js',
             [],
-            '1.9.0',
+            '1.9.1',
             true
         );
     }

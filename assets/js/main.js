@@ -1,6 +1,6 @@
 /**
  * Retro Hacker Terminal — Main JS (vanilla, no jQuery)
- * v1.9.0
+ * v1.9.1
  */
 (function () {
   'use strict';
