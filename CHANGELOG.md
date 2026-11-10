@@ -2,6 +2,11 @@
 
 All notable changes to Retro Hacker Terminal. Versions are incremental per delivered revision.
 
+## 1.9.0 - 2026-11-10
+- New custom 404 page: a terminal window plays a fake "intrusion" (port scan, path bruteforce, payload injection) that ends in `ACCESS_DENIED :: 404`, with a glitching 404 title, replay button and search form.
+- The simulation is vanilla JavaScript (`assets/js/404.js`, loaded only on 404 pages), prints fake text only, makes no network requests, escapes the requested path, and respects `prefers-reduced-motion`.
+- Responsive down to 320px.
+
 ## 1.8.0 - 2026-11-10
 - Made the theme generic for any WordPress site: the default sidebar counter now counts all published posts ("POST_LOG") instead of a hard-coded "defacement" category.
 - New Customizer section **Terminal Counter**: set the counter title and an optional category slug to count.

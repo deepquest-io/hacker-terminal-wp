@@ -4,7 +4,7 @@ Tags: blog, dark, retro, terminal, hacker, one-column, two-columns, right-sideba
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.8.0
+Stable tag: 1.9.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
@@ -21,6 +21,7 @@ Retro Hacker Terminal turns your blog into an old-school computer terminal. Gree
 * Right sidebar that stacks on tablet and mobile
 * Responsive navigation with a mobile toggle and a search drop-down
 * Green-tinted post images
+* Custom 404 page with a terminal hacking simulation (fake output only)
 * Configurable post counter (Customizer > Terminal Counter)
 * Lightweight vanilla JavaScript
 

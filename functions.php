@@ -30,16 +30,26 @@ function deepquest_scripts() {
         'deepquest-style',
         get_stylesheet_uri(),
         [],
-        '1.8.0'
+        '1.9.0'
     );
 
     wp_enqueue_script(
         'deepquest-main',
         get_template_directory_uri() . '/assets/js/main.js',
         [],        // no jQuery dependency — vanilla JS
-        '1.8.0',
+        '1.9.0',
         true       // load in footer
     );
+
+    if ( is_404() ) {
+        wp_enqueue_script(
+            'deepquest-404',
+            get_template_directory_uri() . '/assets/js/404.js',
+            [],
+            '1.9.0',
+            true
+        );
+    }
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
