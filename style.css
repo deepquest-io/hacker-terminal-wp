@@ -1,10 +1,10 @@
 /*
-Theme Name: DeepQuest Terminal
+Theme Name: Retro Hacker Terminal
 Theme URI: https://deepquest.code511.com/blog/
 Author: deepquest
 Author URI: https://deepquest.code511.com/blog/
 Description: Retro CRT terminal theme: phosphor-green text on black with scanlines, glow and a typing prompt. Fully responsive (phone, tablet, desktop) and jQuery-free.
-Version: 1.6.0
+Version: 1.7.0
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 7.4
@@ -1064,7 +1064,7 @@ hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
   color: var(--green-bright);
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════════════════════
    SIDEBAR — categories with counts
    ═══════════════════════════════════════════════════════════════════════════════ */
 

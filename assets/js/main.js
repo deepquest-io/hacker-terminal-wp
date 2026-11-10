@@ -1,6 +1,6 @@
 /**
- * DeepQuest Terminal — Main JS (vanilla, no jQuery)
- * v1.6.0
+ * Retro Hacker Terminal — Main JS (vanilla, no jQuery)
+ * v1.7.0
  */
 (function () {
   'use strict';

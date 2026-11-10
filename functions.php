@@ -1,6 +1,6 @@
 <?php
 /**
- * DeepQuest Terminal Theme Functions
+ * Retro Hacker Terminal Theme Functions
  */
 require_once get_template_directory() . '/inc/fallback-menu.php';
 
@@ -30,14 +30,14 @@ function deepquest_scripts() {
         'deepquest-style',
         get_stylesheet_uri(),
         [],
-        '1.6.0'
+        '1.7.0'
     );
 
     wp_enqueue_script(
         'deepquest-main',
         get_template_directory_uri() . '/assets/js/main.js',
         [],        // no jQuery dependency — vanilla JS
-        '1.6.0',
+        '1.7.0',
         true       // load in footer
     );
 

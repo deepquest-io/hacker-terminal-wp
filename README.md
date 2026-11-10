@@ -1,13 +1,13 @@
-# DeepQuest Terminal
+# Retro Hacker Terminal
 
 > A fully responsive retro CRT terminal WordPress theme. Glowing phosphor-green text on a black screen, with scanlines and a typing command prompt.
 
-![version](https://img.shields.io/badge/version-1.6.0-00ff41?style=flat-square&labelColor=000000)
+![version](https://img.shields.io/badge/version-1.7.0-00ff41?style=flat-square&labelColor=000000)
 ![wordpress](https://img.shields.io/badge/WordPress-5.8%2B-00ff41?style=flat-square&labelColor=000000)
 ![php](https://img.shields.io/badge/PHP-7.4%2B-00ff41?style=flat-square&labelColor=000000)
 ![license](https://img.shields.io/badge/license-GPLv2%2B-00ff41?style=flat-square&labelColor=000000)
 
-DeepQuest Terminal turns a WordPress blog into an old-school computer terminal: green monospace text on pure black, CRT scanlines, vignette and flicker, an animated typing prompt and a system-info footer. It is fully responsive (phone, tablet and desktop), lightweight and uses no jQuery.
+Retro Hacker Terminal turns a WordPress blog into an old-school computer terminal: green monospace text on pure black, CRT scanlines, vignette and flicker, an animated typing prompt and a system-info footer. It is fully responsive (phone, tablet and desktop), lightweight and uses no jQuery.
 
 Made for hacker, security, dev, retro-computing and cyberpunk blogs.
 

@@ -1,6 +1,9 @@
 # Changelog
 
-All notable changes to DeepQuest Terminal. Versions are incremental per delivered revision.
+All notable changes to Retro Hacker Terminal. Versions are incremental per delivered revision.
+
+## 1.7.0 - 2026-11-10
+- Renamed the theme from "DeepQuest Terminal" to "Retro Hacker Terminal" (theme header, docs, footer kernel string). The text domain and folder slug are unchanged, so existing translations and file paths keep working.
 
 ## 1.6.0 - 2026-11-10
 - Fully responsive: verified with headless Chrome at 1440, 1024, 900, 768, 600, 480, 390, 360 and 320px with no horizontal page scroll.
