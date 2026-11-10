@@ -4,7 +4,7 @@ Theme URI: https://deepquest.code511.com/blog/
 Author: deepquest
 Author URI: https://deepquest.code511.com/blog/
 Description: Retro CRT terminal theme: phosphor-green text on black with scanlines, glow and a typing prompt. Fully responsive (phone, tablet, desktop) and jQuery-free.
-Version: 1.9.0
+Version: 1.9.1
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 7.4
@@ -101,7 +101,7 @@ body::after {
 h1,h2,h3,h4,h5,h6 {
   font-family: var(--font-display);
   color: var(--green-bright);
-  text-shadow: 0 0 5px var(--green-bright), 0 0 10px var(--green), 0 0 20px var(--green);
+  text-shadow: 0 0 1px rgba(57,255,20,.7), 0 0 6px rgba(0,255,65,.35);
   line-height: 1.2;
   letter-spacing: .05em;
 }
@@ -110,11 +110,11 @@ h1{font-size:2.5rem}h2{font-size:2rem}h3{font-size:1.6rem}h4{font-size:1.3rem}
 
 p { margin-bottom: 1em; color: var(--green-dim); }
 
-a { color: var(--green-bright); text-decoration: none; transition: all .2s ease; text-shadow: 0 0 5px var(--green); }
+a { color: var(--green-bright); text-decoration: none; transition: all .2s ease; text-shadow: 0 0 4px rgba(0,255,65,.35); }
 
 a:hover {
   color: #fff;
-  text-shadow: 0 0 5px var(--green-bright), 0 0 15px var(--green), 0 0 30px var(--green);
+  text-shadow: 0 0 3px rgba(57,255,20,.95), 0 0 10px rgba(0,255,65,.8), 0 0 22px rgba(0,255,65,.45);
 }
 
 /* ========== LAYOUT ========== */
@@ -602,9 +602,7 @@ td { padding: 7px 12px; border: 1px solid rgba(0,255,65,.1); color: var(--green-
 tr:hover td { background: rgba(0,255,65,.03); }
 hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
 
-/* ═══════════════════════════════════════════════════════════
-   TEMPLATE BASE STYLES — classes used by the PHP templates
-   ═══════════════════════════════════════════════════════════ */
+/* ===== TEMPLATE BASE STYLES: classes used by the PHP templates ===== */
 
 .screen-reader-text {
   border: 0;
@@ -957,9 +955,7 @@ hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
 .comment-body { overflow-wrap: anywhere; }
 .comment-form .submit { width: auto; }
 
-/* ═══════════════════════════════════════════════════════════════════════════════════════
-   NAV SEARCH — right-side search toggle in navigation bar
-   ═══════════════════════════════════════════════════════════════════════════════ */
+/* ===== NAV SEARCH: right-side search toggle in navigation bar ===== */
 
 .nav-inner {
   display: -webkit-flex;
@@ -1064,9 +1060,7 @@ hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
   color: var(--green-bright);
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════════
-   SIDEBAR — categories with counts
-   ═══════════════════════════════════════════════════════════════════════════════ */
+/* ===== SIDEBAR: categories with counts ===== */
 
 .widget-categories .cat-count,
 .widget-archives li a + span {
@@ -1090,12 +1084,10 @@ hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
   text-shadow: 0 0 5px var(--green);
 }
 
-/* WordPress auto-adds count in parens — style it */
+/* WordPress auto-adds count in parens: style it */
 .widget-categories li a::after { content: none; }
 
-/* ═══════════════════════════════════════════════════════════════════════════════
-   DEFACEMENT COUNTER WIDGET
-   ═══════════════════════════════════════════════════════════════════════════════ */
+/* ===== DEFACEMENT COUNTER WIDGET ===== */
 
 .widget-defacement-counter {
   border-color: rgba(255,176,0,.3) !important;
@@ -1178,9 +1170,7 @@ hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
   letter-spacing: .05em;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════════
-   FOOTER — SYSTEM INFO
-   ═══════════════════════════════════════════════════════════════════════ */
+/* ===== FOOTER: SYSTEM INFO ===== */
 
 #colophon {
   padding: 0;
@@ -1190,7 +1180,7 @@ hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
   letter-spacing: normal;
 }
 
-/* Remove old ::after blink from original rule — override */
+/* Remove old ::after blink from original rule: override */
 #colophon::after { content: none !important; }
 
 .footer-sysinfo {
@@ -1294,9 +1284,7 @@ hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
 
 /* responsive consolidated below */
 
-/* ═══════════════════════════════════════════════════════════════════════════════
-   MOBILE NAVIGATION — hamburger toggle
-   ═══════════════════════════════════════════════════════════════════════════════ */
+/* ===== MOBILE NAVIGATION: hamburger toggle ===== */
 
 .menu-toggle {
   display: none;
@@ -1401,9 +1389,7 @@ hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
   }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════════
-   BREAKPOINT: TABLET  ≤ 900px
-   ═══════════════════════════════════════════════════════════════════════════════ */
+/* ===== BREAKPOINT: TABLET <= 900px ===== */
 @media (max-width: 900px) {
 
   /* Layout: sidebar drops below posts */
@@ -1469,9 +1455,7 @@ hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
   .page-numbers { padding: 4px 10px; font-size: 11px; }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════════
-   BREAKPOINT: LARGE MOBILE  ≤ 600px
-   ═══════════════════════════════════════════════════════════════════════════════ */
+/* ===== BREAKPOINT: LARGE MOBILE <= 600px ===== */
 @media (max-width: 600px) {
 
   /* Full-width paddings */
@@ -1534,9 +1518,7 @@ hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
   .comment-form textarea { font-size: 12px; padding: 7px 10px; }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════════
-   BREAKPOINT: SMALL MOBILE  ≤ 400px
-   ═══════════════════════════════════════════════════════════════════════════════ */
+/* ===== BREAKPOINT: SMALL MOBILE <= 400px ===== */
 @media (max-width: 400px) {
 
   .site-title { font-size: 1.6rem; }
@@ -1567,9 +1549,7 @@ hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
   .main-navigation a { font-size: 12px; padding: 10px 14px; }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════════
-   GLOBAL RESPONSIVE UTILITIES
-   ═══════════════════════════════════════════════════════════════════════════════ */
+/* ===== GLOBAL RESPONSIVE UTILITIES ===== */
 
 /* All images responsive by default */
 img {
@@ -1630,9 +1610,7 @@ img {
   }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════════
-   404 PAGE: hacking simulation
-   ═══════════════════════════════════════════════════════════════════════════════ */
+/* ===== 404 PAGE: hacking simulation ===== */
 
 .error-404 { text-align: center; padding: 30px 20px; }
 
@@ -1764,3 +1742,11 @@ img {
   .e404-code, .e404-code::before, .e404-code::after { animation: none; }
   .e404-code::before, .e404-code::after { display: none; }
 }
+
+/* ===== READABILITY (1.9.1): crisp titles at rest, clear glow on hover ===== */
+.post-title a, .single-post-title, .entry-title a, .page-title, .widget-title { text-shadow: 0 0 1px rgba(57,255,20,.7), 0 0 5px rgba(0,255,65,.3); }
+.post-title a:hover, .entry-title a:hover, .post-content a:hover {
+  color: #fff;
+  text-shadow: 0 0 3px rgba(57,255,20,.95), 0 0 10px rgba(0,255,65,.8), 0 0 22px rgba(0,255,65,.45);
+}
+.post-content h2, .post-content h3, .post-content h4 { text-shadow: 0 0 1px rgba(57,255,20,.7), 0 0 4px rgba(0,255,65,.25); }
