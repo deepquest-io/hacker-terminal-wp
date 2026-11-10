@@ -2,6 +2,10 @@
 
 > A fully responsive retro CRT terminal WordPress theme. Glowing phosphor-green text on a black screen, with scanlines and a typing command prompt.
 
+![Retro Hacker Terminal preview](docs/screenshot-home.svg)
+
+*Vector preview of the theme layout: header, navigation, typing prompt, post cards and sidebar widgets.*
+
 ![version](https://img.shields.io/badge/version-1.9.0-00ff41?style=flat-square&labelColor=000000)
 ![wordpress](https://img.shields.io/badge/WordPress-5.8%2B-00ff41?style=flat-square&labelColor=000000)
 ![php](https://img.shields.io/badge/PHP-7.4%2B-00ff41?style=flat-square&labelColor=000000)
