@@ -4,7 +4,7 @@ Theme URI: https://deepquest.code511.com/blog/
 Author: deepquest
 Author URI: https://deepquest.code511.com/blog/
 Description: Retro CRT terminal theme: phosphor-green text on black with scanlines, glow and a typing prompt. Fully responsive (phone, tablet, desktop) and jQuery-free.
-Version: 1.8.0
+Version: 1.9.0
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 7.4
@@ -1628,4 +1628,139 @@ img {
   textarea {
     font-size: 16px; /* prevents iOS Safari zoom-on-focus */
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   404 PAGE: hacking simulation
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.error-404 { text-align: center; padding: 30px 20px; }
+
+.e404-code {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--green-bright);
+  text-shadow: var(--glow-lg);
+  animation: e404-glitch 4s infinite;
+}
+
+.e404-code::before,
+.e404-code::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  overflow: hidden;
+  opacity: .7;
+}
+
+.e404-code::before { color: var(--red);   transform: translate(-2px, 0); clip-path: inset(0 0 60% 0); animation: e404-slice 3s infinite steps(1); }
+.e404-code::after  { color: var(--amber); transform: translate(2px, 0);  clip-path: inset(60% 0 0 0); animation: e404-slice 2.4s infinite steps(1) reverse; }
+
+@keyframes e404-glitch {
+  0%, 92%, 100% { transform: none; }
+  93% { transform: translateX(-3px) skewX(-6deg); }
+  95% { transform: translateX(3px); }
+  97% { transform: translateX(-1px) skewX(4deg); }
+}
+
+@keyframes e404-slice {
+  0%, 90%, 100% { opacity: 0; }
+  91% { opacity: .8; clip-path: inset(10% 0 50% 0); }
+  94% { opacity: .8; clip-path: inset(55% 0 5% 0); }
+  97% { opacity: .8; clip-path: inset(30% 0 30% 0); }
+}
+
+.e404-title { font-size: 1.6rem; margin: 6px 0 8px; overflow-wrap: anywhere; }
+.e404-sub   { color: var(--green-dim); margin-bottom: 18px; }
+
+.e404-window {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+  border: 1px solid var(--green-dim);
+  background: #000;
+  box-shadow: 0 0 20px var(--green-glow), inset 0 0 30px rgba(0,255,65,.03);
+}
+
+.e404-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(0,255,65,.08);
+  border-bottom: 1px solid rgba(0,255,65,.25);
+  font-size: 11px;
+  color: rgba(0,255,65,.6);
+}
+
+.e404-dot { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--green-dim); }
+.e404-dot:first-child { background: var(--red); border-color: var(--red); }
+.e404-wintitle { margin-left: 8px; letter-spacing: .1em; }
+
+.e404-term {
+  height: 320px;
+  max-height: 55vh;
+  overflow-y: auto;
+  padding: 12px 14px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--green);
+}
+
+.e404-line { white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; }
+.e404-line.cmd  { color: var(--green-bright); }
+.e404-line.err  { color: var(--red);   text-shadow: 0 0 6px rgba(255,51,51,.6); }
+.e404-line.warn { color: var(--amber); }
+.e404-line.dim  { color: rgba(0,255,65,.45); }
+.e404-line.bar  { color: var(--green-dim); }
+.e404-line.big  { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: .1em; }
+
+.e404-cursor {
+  display: inline-block;
+  width: .6em;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--green-bright);
+  animation: blink 1s step-end infinite;
+}
+
+.e404-note { margin: 10px 0 16px; font-size: 11px; color: rgba(0,255,65,.4); }
+
+.e404-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 20px; }
+
+.e404-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 6px 18px;
+  background: rgba(0,255,65,.06);
+  border: 1px solid var(--green);
+  color: var(--green-bright);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: .1em;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all .2s;
+}
+
+.e404-btn:hover { background: var(--green-glow-strong); color: #fff; box-shadow: 0 0 15px var(--green-glow); }
+
+.e404-search { max-width: 420px; margin: 0 auto; }
+
+@media (max-width: 600px) {
+  .e404-code { font-size: 4.2rem; }
+  .e404-title { font-size: 1.3rem; }
+  .e404-term { height: 260px; font-size: 11.5px; padding: 10px; }
+  .e404-btn { min-height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .e404-code, .e404-code::before, .e404-code::after { animation: none; }
+  .e404-code::before, .e404-code::after { display: none; }
 }
