@@ -18,7 +18,7 @@
                     </div>
                     <div class="sysinfo-row">
                         <span class="sysinfo-key">KERNEL</span>
-                        <span class="sysinfo-val">Retro-Hacker-Terminal v1.9.0</span>
+                        <span class="sysinfo-val">Retro-Hacker-Terminal v1.9.1</span>
                     </div>
                 </div>
 
