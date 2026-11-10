@@ -30,14 +30,14 @@ function deepquest_scripts() {
         'deepquest-style',
         get_stylesheet_uri(),
         [],
-        '1.5.1'
+        '1.6.0'
     );
 
     wp_enqueue_script(
         'deepquest-main',
         get_template_directory_uri() . '/assets/js/main.js',
         [],        // no jQuery dependency — vanilla JS
-        '1.5.1',
+        '1.6.0',
         true       // load in footer
     );
 
