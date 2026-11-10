@@ -1,6 +1,6 @@
 /**
  * Retro Hacker Terminal — Main JS (vanilla, no jQuery)
- * v1.7.0
+ * v1.8.0
  */
 (function () {
   'use strict';
@@ -66,7 +66,7 @@
   if (cmdEl) {
     var commands = [
       'cat /proc/version','ls -la /var/www/',
-      'grep -r "deepquest" ./logs','nmap -sV target.host',
+      'grep -r "error" ./logs','nmap -sV target.host',
       'tail -f /var/log/apache2/access.log',
       'find / -name "*.conf" 2>/dev/null',
       'ping -c 4 8.8.8.8','whoami','uname -a',

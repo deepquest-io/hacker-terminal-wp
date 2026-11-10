@@ -2,6 +2,13 @@
 
 All notable changes to Retro Hacker Terminal. Versions are incremental per delivered revision.
 
+## 1.8.0 - 2026-11-10
+- Made the theme generic for any WordPress site: the default sidebar counter now counts all published posts ("POST_LOG") instead of a hard-coded "defacement" category.
+- New Customizer section **Terminal Counter**: set the counter title and an optional category slug to count.
+- Removed the site-specific REST route (`deepquest/v1/defacement-count`) and the hard-coded "EDU_USE_ONLY" footer text (now shows HTTP/HTTPS).
+- Header status shows `CONN_SECURE` only on HTTPS (otherwise `CONN_OPEN`).
+- Removed site-specific strings from the typing prompt and code-block label.
+
 ## 1.7.0 - 2026-11-10
 - Renamed the theme from "DeepQuest Terminal" to "Retro Hacker Terminal" (theme header, docs, footer kernel string). The text domain and folder slug are unchanged, so existing translations and file paths keep working.
 

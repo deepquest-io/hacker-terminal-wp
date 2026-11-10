@@ -2,7 +2,7 @@
 
 > A fully responsive retro CRT terminal WordPress theme. Glowing phosphor-green text on a black screen, with scanlines and a typing command prompt.
 
-![version](https://img.shields.io/badge/version-1.7.0-00ff41?style=flat-square&labelColor=000000)
+![version](https://img.shields.io/badge/version-1.8.0-00ff41?style=flat-square&labelColor=000000)
 ![wordpress](https://img.shields.io/badge/WordPress-5.8%2B-00ff41?style=flat-square&labelColor=000000)
 ![php](https://img.shields.io/badge/PHP-7.4%2B-00ff41?style=flat-square&labelColor=000000)
 ![license](https://img.shields.io/badge/license-GPLv2%2B-00ff41?style=flat-square&labelColor=000000)
@@ -16,7 +16,7 @@ Made for hacker, security, dev, retro-computing and cyberpunk blogs.
 - Phosphor-green on black CRT look (VT323 and Share Tech Mono)
 - Scanlines, vignette, text glow and screen flicker
 - Typing terminal prompt bar (`root@yoursite:~#`)
-- Right sidebar with category, archive and counter widgets
+- Right sidebar with category, archive and counter widgets (counter title and category configurable in Appearance > Customize > Terminal Counter)
 - Fully responsive: desktop, tablet and phone layouts (tested 320px to 1440px, no horizontal scroll), hamburger menu, 44px touch targets, fluid images, scrollable code blocks and tables
 - Nav bar search drop-down
 - Green-tinted images, styled code blocks, comments, pagination and tables

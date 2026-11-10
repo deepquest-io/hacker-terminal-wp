@@ -18,7 +18,7 @@
                     </div>
                     <div class="sysinfo-row">
                         <span class="sysinfo-key">KERNEL</span>
-                        <span class="sysinfo-val">Retro-Hacker-Terminal v1.7.0</span>
+                        <span class="sysinfo-val">Retro-Hacker-Terminal v1.8.0</span>
                     </div>
                 </div>
 
@@ -72,8 +72,8 @@
                         <span class="sysinfo-val">&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></span>
                     </div>
                     <div class="sysinfo-row">
-                        <span class="sysinfo-key">LICENSE</span>
-                        <span class="sysinfo-val">EDU_USE_ONLY</span>
+                        <span class="sysinfo-key">PROTO</span>
+                        <span class="sysinfo-val"><?php echo is_ssl() ? 'HTTPS' : 'HTTP'; ?></span>
                     </div>
                     <?php if ( has_nav_menu( 'footer' ) ) : ?>
                     <div class="footer-nav-wrap">
