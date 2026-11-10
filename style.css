@@ -4,7 +4,7 @@ Theme URI: https://deepquest.code511.com/blog/
 Author: deepquest
 Author URI: https://deepquest.code511.com/blog/
 Description: Retro CRT terminal theme: phosphor-green text on black with scanlines, glow and a typing prompt. Fully responsive (phone, tablet, desktop) and jQuery-free.
-Version: 1.7.0
+Version: 1.8.0
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 7.4
@@ -419,7 +419,7 @@ a:hover {
 .single .entry-content pre { padding: 15px; overflow-x: auto; margin-bottom: 1em; display: block; }
 
 .single .entry-content pre::before {
-  content: 'root@deepquest:~# ';
+  content: 'root@terminal:~# ';
   display: block;
   color: rgba(0,255,65,.4);
   margin-bottom: 5px;
@@ -1180,7 +1180,7 @@ hr { border: none; border-top: 1px solid rgba(0,255,65,.2); margin: 1.5em 0; }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
    FOOTER — SYSTEM INFO
-   ═══════════════════════════════════════════════════════════════════════════════ */
+   ═══════════════════════════════════════════════════════════════════════ */
 
 #colophon {
   padding: 0;
