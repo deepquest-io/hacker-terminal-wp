@@ -30,14 +30,14 @@ function deepquest_scripts() {
         'deepquest-style',
         get_stylesheet_uri(),
         [],
-        '1.7.0'
+        '1.8.0'
     );
 
     wp_enqueue_script(
         'deepquest-main',
         get_template_directory_uri() . '/assets/js/main.js',
         [],        // no jQuery dependency — vanilla JS
-        '1.7.0',
+        '1.8.0',
         true       // load in footer
     );
 
@@ -84,36 +84,33 @@ function deepquest_body_classes( $classes ) {
 add_filter( 'body_class', 'deepquest_body_classes' );
 
 /**
- * REST API endpoint: defacement post count
- * GET /wp-json/deepquest/v1/defacement-count
+ * Customizer: terminal counter widget (shown in the default sidebar)
  */
-function deepquest_register_rest_routes() {
-    register_rest_route( 'deepquest/v1', '/defacement-count', [
-        'methods'             => 'GET',
-        'callback'            => 'deepquest_defacement_count_callback',
-        'permission_callback' => '__return_true',
+function deepquest_customize_register( $wp_customize ) {
+    $wp_customize->add_section( 'deepquest_counter', [
+        'title'    => esc_html__( 'Terminal Counter', 'deepquest-terminal' ),
+        'priority' => 160,
     ] );
-}
-add_action( 'rest_api_init', 'deepquest_register_rest_routes' );
 
-function deepquest_defacement_count_callback() {
-    $q = new WP_Query( [
-        'post_type'      => 'post',
-        'posts_per_page' => -1,
-        'fields'         => 'ids',
-        'tax_query'      => [
-            'relation' => 'OR',
-            [
-                'taxonomy' => 'category',
-                'field'    => 'slug',
-                'terms'    => 'defacement',
-            ],
-            [
-                'taxonomy' => 'post_tag',
-                'field'    => 'slug',
-                'terms'    => 'defacement',
-            ],
-        ],
+    $wp_customize->add_setting( 'deepquest_counter_title', [
+        'default'           => 'POST_LOG',
+        'sanitize_callback' => 'sanitize_text_field',
     ] );
-    return rest_ensure_response( [ 'count' => (int) $q->found_posts ] );
+    $wp_customize->add_control( 'deepquest_counter_title', [
+        'label'   => esc_html__( 'Counter title', 'deepquest-terminal' ),
+        'section' => 'deepquest_counter',
+        'type'    => 'text',
+    ] );
+
+    $wp_customize->add_setting( 'deepquest_counter_category', [
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_title',
+    ] );
+    $wp_customize->add_control( 'deepquest_counter_category', [
+        'label'       => esc_html__( 'Category slug to count', 'deepquest-terminal' ),
+        'description' => esc_html__( 'Leave empty to count all published posts.', 'deepquest-terminal' ),
+        'section'     => 'deepquest_counter',
+        'type'        => 'text',
+    ] );
 }
+add_action( 'customize_register', 'deepquest_customize_register' );

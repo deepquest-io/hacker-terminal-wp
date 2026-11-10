@@ -39,50 +39,30 @@
         </div>
 
         <!-- ══════════════════════════════
-             DEFACEMENT COUNTER
+             POST COUNTER (Customizer: Terminal Counter)
         ══════════════════════════════ -->
+        <?php
+        $counter_title = get_theme_mod( 'deepquest_counter_title', 'POST_LOG' );
+        $counter_slug  = sanitize_title( get_theme_mod( 'deepquest_counter_category', '' ) );
+        $counter_args  = [
+            'post_type'      => 'post',
+            'post_status'    => 'publish',
+            'posts_per_page' => 1,
+            'no_found_rows'  => false,
+        ];
+        if ( $counter_slug ) {
+            $counter_args['category_name'] = $counter_slug;
+        }
+        $counter_query = new WP_Query( $counter_args );
+        $counter_count = (int) $counter_query->found_posts;
+        $counter_last  = $counter_query->have_posts() ? get_the_date( 'Y-m-d', $counter_query->posts[0] ) : 'N/A';
+        wp_reset_postdata();
+        ?>
         <div class="widget widget-defacement-counter">
-            <h3 class="widget-title">DEFACEMENT_LOG</h3>
-            <?php
-            // Count posts tagged "defacement" (both tag and category)
-            $defacement_tag   = get_term_by( 'slug', 'defacement', 'post_tag' );
-            $defacement_cat   = get_term_by( 'slug', 'defacement', 'category' );
-            $defacement_count = 0;
-
-            if ( $defacement_tag && ! is_wp_error( $defacement_tag ) ) {
-                $defacement_count += (int) $defacement_tag->count;
-            }
-            if ( $defacement_cat && ! is_wp_error( $defacement_cat ) ) {
-                $defacement_count = max( $defacement_count, (int) $defacement_cat->count );
-            }
-
-            // Fallback: query directly
-            if ( $defacement_count === 0 ) {
-                $dq = new WP_Query( [
-                    'post_type'      => 'post',
-                    'posts_per_page' => -1,
-                    'fields'         => 'ids',
-                    'tax_query'      => [
-                        'relation' => 'OR',
-                        [
-                            'taxonomy' => 'category',
-                            'field'    => 'slug',
-                            'terms'    => 'defacement',
-                        ],
-                        [
-                            'taxonomy' => 'post_tag',
-                            'field'    => 'slug',
-                            'terms'    => 'defacement',
-                        ],
-                    ],
-                ] );
-                $defacement_count = (int) $dq->found_posts;
-                wp_reset_postdata();
-            }
-            ?>
+            <h3 class="widget-title"><?php echo esc_html( $counter_title ); ?></h3>
             <div class="defacement-counter">
-                <div class="counter-label">TOTAL DEFACEMENTS LOGGED:</div>
-                <div class="counter-display" id="defacementCounter" data-target="<?php echo esc_attr( $defacement_count ); ?>">
+                <div class="counter-label"><?php esc_html_e( 'TOTAL ENTRIES LOGGED:', 'deepquest-terminal' ); ?></div>
+                <div class="counter-display" id="defacementCounter" data-target="<?php echo esc_attr( $counter_count ); ?>">
                     <span class="counter-num">000000</span>
                 </div>
                 <div class="counter-bar">
@@ -90,24 +70,7 @@
                 </div>
                 <div class="counter-meta">
                     <span>// STATUS: <span style="color:var(--green-bright)">ACTIVE</span></span>
-                    <span>// LAST: <?php
-                        $last = new WP_Query( [
-                            'posts_per_page' => 1,
-                            'fields'         => 'ids',
-                            'tax_query'      => [ [
-                                'taxonomy' => 'category',
-                                'field'    => 'slug',
-                                'terms'    => 'defacement',
-                            ] ],
-                        ] );
-                        if ( $last->have_posts() ) {
-                            $last->the_post();
-                            echo get_the_date( 'Y-m-d' );
-                            wp_reset_postdata();
-                        } else {
-                            echo 'N/A';
-                        }
-                    ?></span>
+                    <span>// LAST: <?php echo esc_html( $counter_last ); ?></span>
                 </div>
             </div>
         </div>
