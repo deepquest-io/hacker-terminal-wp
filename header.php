@@ -38,7 +38,7 @@
             <div class="header-status">
                 <div class="status-line">
                     <span class="status-dot"></span>
-                    <span>CONN_SECURE</span>
+                    <span><?php echo is_ssl() ? 'CONN_SECURE' : 'CONN_OPEN'; ?></span>
                 </div>
                 <div><?php echo date( 'Y-m-d' ); ?></div>
                 <div><?php echo date( 'H:i:s' ); ?> UTC</div>
